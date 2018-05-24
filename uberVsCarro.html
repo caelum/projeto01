@@ -10,9 +10,21 @@ Total: R$ 42,00
 <h2>Carro</h2>
 
 <script>
-    var totalGasolina = parseFloat(prompt("Digite o quanto gastará com gasolina"))
+    var distancia = parseFloat(prompt("Qual a distância que será percorrida?"))
+    var autonomia = parseFloat(prompt("Quantos km seu carro faz por litro?"))
+    var precoLitroGasolina = parseFloat(prompt("Qual o preco do litro da gasolina?"))
+    
+    var totalGasolina = (distancia / autonomia) * precoLitroGasolina
+
     var totalEstacionamento = parseFloat(prompt("Digite o quanto gastará com estacionamento"))
+
     var totalCarro = totalGasolina + totalEstacionamento
+    
+    document.write("Gasolina: R$ " + totalGasolina.toFixed(2).replace(".", ","))
+    document.write("<br>")
+    document.write("Estacionamento: R$ " + totalEstacionamento.toFixed(2).replace(".", ","))
+    document.write("<br>")
     document.write("Total: R$ " + totalCarro.toFixed(2).replace(".", ","))
+
 </script>
 
