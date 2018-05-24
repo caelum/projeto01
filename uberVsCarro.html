@@ -20,11 +20,13 @@ Total: R$ 42,00
 
     var totalCarro = totalGasolina + totalEstacionamento
     
-    document.write("Gasolina: R$ " + totalGasolina.toFixed(2).replace(".", ","))
-    document.write("<br>")
-    document.write("Estacionamento: R$ " + totalEstacionamento.toFixed(2).replace(".", ","))
-    document.write("<br>")
-    document.write("Total: R$ " + totalCarro.toFixed(2).replace(".", ","))
+    document.write(`
+        Gasolina: R$ ${totalGasolina.toFixed(2).replace(".", ",")}
+        <br>
+        Estacionamento: R$ ${totalEstacionamento.toFixed(2).replace(".", ",")}
+        <br>
+        Total: R$ ${totalCarro.toFixed(2).replace(".", ",")}
+    `)
 
 </script>
 
