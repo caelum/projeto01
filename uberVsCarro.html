@@ -17,9 +17,8 @@
 
     var totalUber = 2 + distancia * 1.4 + tempoEmMinutos * 0.26
 
-    tempo = tempoEmMinutos
     document.write(`
-        Tempo: ${formataRelogio()}
+        Tempo: ${formataRelogio(tempoEmMinutos)}
         <br>
         Total: R$ ${totalUber.toFixed(2).replace(".", ",")}
     `)

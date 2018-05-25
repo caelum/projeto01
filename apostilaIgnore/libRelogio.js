@@ -1,5 +1,4 @@
-var tempo
-function formataRelogio(){
+function formataRelogio(tempo){
     var tempoEmHorasFloat = tempo/60
     var horas = parseInt(tempoEmHorasFloat)
     var minutos = parseInt((tempoEmHorasFloat - horas) * 60)
