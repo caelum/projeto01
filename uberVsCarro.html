@@ -3,14 +3,27 @@
 <h1>Uber vs Carro</h1>
 
 <h2>Uber</h2>
-Total: R$ 42,00
+
+<script>
+    var distancia = parseFloat(prompt("Qual a distância que será percorrida?"))
+
+    var velocidadeMedia = 25  
+    var tempoEmHoras = distancia / velocidadeMedia
+    var tempoEmMinutos = tempoEmHoras * 60
+
+    var totalUber = 2 + distancia * 1.4 + tempoEmMinutos * 0.26
+
+    document.write(`
+        Total: R$ ${totalUber.toFixed(2).replace(".", ",")}
+    `)
+
+</script>
 
 <br>
 
 <h2>Carro</h2>
 
 <script>
-    var distancia = parseFloat(prompt("Qual a distância que será percorrida?"))
     var autonomia = parseFloat(prompt("Quantos km seu carro faz por litro?"))
     var precoLitroGasolina = parseFloat(prompt("Qual o preco do litro da gasolina?"))
     
