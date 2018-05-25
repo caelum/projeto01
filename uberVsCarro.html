@@ -2,10 +2,18 @@
 
 <h1>Uber vs Carro</h1>
 
+<script>
+    var mensagem
+    function pegaNumero(){
+        return parseFloat(prompt(mensagem).replace(",", "."))
+    }
+</script>
+
 <h2>Uber</h2>
 
 <script>
-    var distancia = parseFloat(prompt("Qual a distância que será percorrida?"))
+    mensagem = "Qual a distância que será percorrida?"
+    var distancia = pegaNumero()
 
     var velocidadeMedia = 25  
     var tempoEmHoras = distancia / velocidadeMedia
@@ -24,12 +32,16 @@
 <h2>Carro</h2>
 
 <script>
-    var autonomia = parseFloat(prompt("Quantos km seu carro faz por litro?"))
-    var precoLitroGasolina = parseFloat(prompt("Qual o preco do litro da gasolina?"))
+    mensagem = "Quantos km seu carro faz por litro?"
+    var autonomia = pegaNumero()
+
+    mensagem = "Qual o preco do litro da gasolina?"
+    var precoLitroGasolina = pegaNumero()
     
     var totalGasolina = (distancia / autonomia) * precoLitroGasolina
 
-    var totalEstacionamento = parseFloat(prompt("Digite o quanto gastará com estacionamento"))
+    mensagem = "Digite o quanto gastará com estacionamento"
+    var totalEstacionamento = pegaNumero()
 
     var totalCarro = totalGasolina + totalEstacionamento
     
