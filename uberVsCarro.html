@@ -2,14 +2,13 @@
 
 <h1>Uber vs Carro</h1>
 
-<script src="https://rawgit.com/caelum/projeto01/formataTempoUberComLibInstrutor/apostilaIgnore/libRelogio.js"></script>
+<script src="apostilaIgnore/libRelogio.js"></script>
 <script src="pegaNumero.js"></script>
 
 <h2>Uber</h2>
 
 <script>
-    mensagem = "Qual a distância que será percorrida?"
-    var distancia = pegaNumero()
+    var distancia = pegaNumero("Qual a distância que será percorrida?")
 
     var velocidadeMedia = 25  
     var tempoEmHoras = distancia / velocidadeMedia
@@ -30,16 +29,13 @@
 <h2>Carro</h2>
 
 <script>
-    mensagem = "Quantos km seu carro faz por litro?"
-    var autonomia = pegaNumero()
+    var autonomia = pegaNumero("Quantos km seu carro faz por litro?")
 
-    mensagem = "Qual o preco do litro da gasolina?"
-    var precoLitroGasolina = pegaNumero()
+    var precoLitroGasolina = pegaNumero("Qual o preco do litro da gasolina?")
     
     var totalGasolina = (distancia / autonomia) * precoLitroGasolina
 
-    mensagem = "Digite o quanto gastará com estacionamento"
-    var totalEstacionamento = pegaNumero()
+    var totalEstacionamento = pegaNumero("Digite o quanto gastará com estacionamento")
 
     var totalCarro = totalGasolina + totalEstacionamento
     
