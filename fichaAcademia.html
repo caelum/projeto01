@@ -2,28 +2,29 @@
 
 <h1>Cadastramento Academia Caelum</h1>
 
+<script src="https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/libBrasil.js"></script>
+<script src="https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/mostra.js"></script>
 <script src="https://rawgit.com/caelum/projeto01/calculoIdade/apostilaIgnore/libIdade.js"></script>
-<script src="pegaNumero.js"></script>
 
 Nome
 <br>
 <input type="text" id="campoNome">
-<br>
+<br><br>
 
 Peso
 <br>
 <input type="text" id="campoPeso">
-<br>
+<br><br>
 
 Altura
 <br>
 <input type="text" id="campoAltura">
-<br>
+<br><br>
 
 Data de Nascimento
 <br>
 <input type="text" id="campoDataNascimento">
-<br>
+<br><br>
 
 <button onclick="criaFicha()">
     Enviar
@@ -32,8 +33,8 @@ Data de Nascimento
 <script>
     function criaFicha(){
         var nome = campoNome.value
-        var peso = campoPeso.value
-        var altura = campoAltura.value
+        var peso = parseFloatBrasil(campoPeso.value)
+        var altura = parseFloatBrasil(campoAltura.value)
         var dataNascimento = campoDataNascimento.value
 
         var dataNascimentoLista = dataNascimento.split("/")
@@ -44,12 +45,13 @@ Data de Nascimento
         
         var idade = calculaIdade(diaNascimento, mesNascimento, anoNascimento)
 
-        document.write(`
+        mostra(`
+            <hr>
             Nome: ${nome}
             <br>
-            Peso: ${peso.toFixed(2).replace(".", ",")} kg
+            Peso: ${formataFloatBrasil(peso)} kg
             <br>
-            Altura: ${altura.toFixed(2).replace(".", ",")} m
+            Altura: ${formataFloatBrasil(altura)} m
             <br>
             Data de Nascimento: ${dataNascimento}
             <br>
