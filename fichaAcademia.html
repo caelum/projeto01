@@ -49,16 +49,17 @@ Data de Nascimento
         var idade = calculaIdade(diaNascimento, mesNascimento, anoNascimento)
 
         var temProblemasCardiacos = campoProblemasCardiacos.checked
+        var ehCrianca = idade < 15
 
         var fraseAcompanhamentoMedico
 
-        if(temProblemasCardiacos){
+        if(temProblemasCardiacos || ehCrianca){
             fraseAcompanhamentoMedico = "Necessita de acompanhamento médico"
         }
-        if(!temProblemasCardiacos){
+        if(!temProblemasCardiacos && !ehCrianca){
             fraseAcompanhamentoMedico = "NÃO necessita de acompanhamento médico"        
         }
-
+        
         mostra(`
             <hr>
             Nome: ${nome}
