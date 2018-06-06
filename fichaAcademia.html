@@ -4,30 +4,57 @@
 
 <script src="https://rawgit.com/caelum/projeto01/calculoIdade/apostilaIgnore/libIdade.js"></script>
 <script src="pegaNumero.js"></script>
+
+Nome
+<br>
+<input type="text" id="campoNome">
+<br>
+
+Peso
+<br>
+<input type="text" id="campoPeso">
+<br>
+
+Altura
+<br>
+<input type="text" id="campoAltura">
+<br>
+
+Data de Nascimento
+<br>
+<input type="text" id="campoDataNascimento">
+<br>
+
+<button onclick="criaFicha()">
+    Enviar
+</button>
+
 <script>
-    var nome = prompt("Qual o nome?")
-    var peso = pegaNumero("Qual o peso?")
-    var altura = pegaNumero("Qual a altura?")
-    var dataNascimento = prompt("Qual a data de nascimento?")
+    function criaFicha(){
+        var nome = campoNome.value
+        var peso = campoPeso.value
+        var altura = campoAltura.value
+        var dataNascimento = campoDataNascimento.value
 
-    var dataNascimentoLista = dataNascimento.split("/")
+        var dataNascimentoLista = dataNascimento.split("/")
 
-    var diaNascimento = dataNascimentoLista[0]
-    var mesNascimento = dataNascimentoLista[1]
-    var anoNascimento = dataNascimentoLista[2]
-    
-    var idade = calculaIdade(diaNascimento, mesNascimento, anoNascimento)
+        var diaNascimento = dataNascimentoLista[0]
+        var mesNascimento = dataNascimentoLista[1]
+        var anoNascimento = dataNascimentoLista[2]
+        
+        var idade = calculaIdade(diaNascimento, mesNascimento, anoNascimento)
 
-    document.write(`
-        Nome: ${nome}
-        <br>
-        Peso: ${peso}
-        <br>
-        Altura: ${altura.toFixed(2).replace(".", ",")}
-        <br>
-        Data de Nascimento: ${dataNascimento}
-        <br>
-        Idade: ${idade} anos
-    `)
+        document.write(`
+            Nome: ${nome}
+            <br>
+            Peso: ${peso}
+            <br>
+            Altura: ${altura.toFixed(2).replace(".", ",")}
+            <br>
+            Data de Nascimento: ${dataNascimento}
+            <br>
+            Idade: ${idade} anos
+        `)
+    }
 </script>
 
