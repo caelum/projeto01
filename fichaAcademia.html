@@ -26,6 +26,9 @@ Data de Nascimento
 <input type="text" id="campoDataNascimento">
 <br><br>
 
+<input type="checkbox" id="campoProblemasCardiacos"> Tem problemas cardíacos
+<br><br>
+
 <button onclick="criaFicha()">
     Enviar
 </button>
@@ -45,6 +48,17 @@ Data de Nascimento
         
         var idade = calculaIdade(diaNascimento, mesNascimento, anoNascimento)
 
+        var temProblemasCardiacos = campoProblemasCardiacos.checked
+
+        var fraseAcompanhamentoMedico
+
+        if(temProblemasCardiacos){
+            fraseAcompanhamentoMedico = "Necessita de acompanhamento médico"
+        }
+        if(!temProblemasCardiacos){
+            fraseAcompanhamentoMedico = "NÃO necessita de acompanhamento médico"        
+        }
+
         mostra(`
             <hr>
             Nome: ${nome}
@@ -56,6 +70,8 @@ Data de Nascimento
             Data de Nascimento: ${dataNascimento}
             <br>
             Idade: ${idade} anos
+            <br>
+            ${fraseAcompanhamentoMedico}
         `)
     }
 </script>
