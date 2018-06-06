@@ -34,7 +34,12 @@ Data de Nascimento
 </button>
 
 <script>
+
+    var numeroFicha = 0
+
     function criaFicha(){
+        numeroFicha = numeroFicha + 1
+
         var nome = campoNome.value
         var peso = parseFloatBrasil(campoPeso.value)
         var altura = parseFloatBrasil(campoAltura.value)
@@ -61,6 +66,8 @@ Data de Nascimento
         }
         
         mostra(`
+            <hr>
+            Ficha ${numeroFicha}
             <hr>
             Nome: ${nome}
             <br>
