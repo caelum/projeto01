@@ -18,12 +18,10 @@ Quantos números quer sortear? <input type="text" id="campoQuantidadeNumeros">
 
         var listaNumerosMisteriosos = []
 
-        var i = 0
-        while(i < campoQuantidadeNumeros.value){
+        for(var i = 0; i < campoQuantidadeNumeros.value; i = i + 1){
             var numeroMisterioso = parseInt((Math.random()*99)+1)
             console.log(numeroMisterioso)
             listaNumerosMisteriosos.push(numeroMisterioso)
-            i = i + 1
         }
 
         var chute = pegaNumero("Chute um número misterioso!")
