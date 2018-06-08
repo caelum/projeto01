@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+<h1>Loteria</h1>
+
+Quantos números quer sortear? <input type="text" id="campoQuantidadeNumeros">
+<br><br>
+<button onclick="jogar()">
+    Jogar
+</button>
+
+<script src="https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/mostra.js"></script>
+<script src="pegaNumero.js"></script>
+
+<script>
+    var numeroJogo = 0
+
+    function jogar(){
+        numeroJogo = numeroJogo + 1
+
+        var listaNumerosMisteriosos = []
+
+        var i = 0
+        while(i < campoQuantidadeNumeros.value){
+            var numeroMisterioso = parseInt((Math.random()*99)+1)
+            console.log(numeroMisterioso)
+            listaNumerosMisteriosos.push(numeroMisterioso)
+            i = i + 1
+        }
+
+        var chute = pegaNumero("Chute um número misterioso!")
+        
+        var qtChutesInvalidos = 0
+        while(chute <= 0 || chute > 100){
+            qtChutesInvalidos = qtChutesInvalidos + 1
+            if(qtChutesInvalidos == 3) {
+                alert("Game Over")
+                break
+            }
+
+            chute = pegaNumero("Número misterioso inválido. Ele está entre 0 e 100. Tente de novo aí!")
+        }
+
+        if(listaNumerosMisteriosos.includes(chute)){
+            mostra(`Jogo ${numeroJogo}: Acertou! Os números eram ${listaNumerosMisteriosos}`)
+        } 
+        else {
+            mostra(`Jogo ${numeroJogo}: Errou! Os números eram ${listaNumerosMisteriosos}`)
+        }
+    }
+</script>
